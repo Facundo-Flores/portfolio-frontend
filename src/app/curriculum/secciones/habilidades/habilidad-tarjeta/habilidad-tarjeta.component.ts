@@ -1,5 +1,5 @@
 import {Component, Input } from '@angular/core';
-import {Habilidad} from "../../../../common/interfaces/curriculum.interface";gi
+import {Habilidad} from "../../../../common/interfaces/curriculum.interface";
 import {MatDialog} from "@angular/material/dialog";
 import {AgregarHabilidadComponent} from "../agregar-habilidad/agregar-habilidad.component";
 
