@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CurriculumRoutingModule} from "./curriculum-routing.module";
+
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+import { CurriculumRoutingModule } from "./curriculum-routing.module";
+
 import { AcercadeComponent } from './secciones/acercade/acercade.component';
 import { ExperienciaComponent } from './secciones/experiencia/experiencia.component';
 import { HabilidadesComponent } from './secciones/habilidades/habilidades.component';
@@ -20,7 +24,7 @@ import { FormacionTarjetaComponent } from './secciones/formacion/formacion-tarje
 import { AgregarFormacionComponent } from './secciones/formacion/agregar-formacion/agregar-formacion.component';
 import { AgregarCursoComponent } from './secciones/formacion/agregar-curso/agregar-curso.component';
 import { CursoTarjetaComponent } from './secciones/formacion/curso-tarjeta/curso-tarjeta.component';
-import {FlexLayoutModule} from "@angular/flex-layout";
+
 
 
 
