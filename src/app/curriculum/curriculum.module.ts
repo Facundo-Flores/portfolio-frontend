@@ -24,6 +24,7 @@ import { FormacionTarjetaComponent } from './secciones/formacion/formacion-tarje
 import { AgregarFormacionComponent } from './secciones/formacion/agregar-formacion/agregar-formacion.component';
 import { AgregarCursoComponent } from './secciones/formacion/agregar-curso/agregar-curso.component';
 import { CursoTarjetaComponent } from './secciones/formacion/curso-tarjeta/curso-tarjeta.component';
+import {MaterialModule} from "../material/material.module";
 
 
 
@@ -54,6 +55,7 @@ import { CursoTarjetaComponent } from './secciones/formacion/curso-tarjeta/curso
     CommonModule,
     CurriculumRoutingModule,
     FlexLayoutModule,
+    MaterialModule
   ]
 })
 export class CurriculumModule { }
