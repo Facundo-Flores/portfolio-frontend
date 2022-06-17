@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Proyecto, ProyectoResponse} from "../../../common/interfaces/curriculum.interface";
+import {CurriculumService} from "../../../common/services/curriculum.service";
 
 @Component({
   selector: 'app-proyectos',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor() { }
+  listadoProyectos: Proyecto[] = [];
+  constructor(private curriculumService: CurriculumService) { }
 
   ngOnInit(): void {
+    this.getProyectos()
   }
 
+  getProyectos() {
+    this.curriculumService.getAllInfo<ProyectoResponse>('proyecto')
+      .subscribe(resp => {
+        this.procesarProyectoResponse(resp)
+      })
+  }
+
+  procesarProyectoResponse(resp: ProyectoResponse): Proyecto[] {
+    let listaProyectos = resp.proyectos
+    listaProyectos.forEach((proyecto: Proyecto) => {
+      if (proyecto.img != null)
+        proyecto.img = 'data:image/jpeg;base64,'+ proyecto.img;
+      this.listadoProyectos.push(proyecto)
+    })
+    return this.listadoProyectos
+  }
 }
