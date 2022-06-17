@@ -1,1 +1,12 @@
-<p>habilidades works!</p>
+<h1>Habilidades</h1>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+  <div fxFlex="30"
+       *ngFor="let habilidad of listaHabilidades">
+    <app-habilidad-tarjeta [habilidad]="habilidad"></app-habilidad-tarjeta>
+  </div>
+</div>

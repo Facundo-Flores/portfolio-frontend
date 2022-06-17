@@ -1,1 +1,21 @@
-<p>habilidad-tarjeta works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> {{ habilidad.nombre }}</mat-card-title>
+    <mat-card-subtitle> {{habilidad.descripcion }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="barra-progreso">
+      <span [style.width]="habilidad.nivel">{{ habilidad.nivel }}</span> <!-- I want habilidad.width value to set the width of span.-->
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <!--<button mat-button color="info" [routerLink]="['../editar/habilidad', habilidad.id]">-->
+
+    <button mat-button color="info" (click)="editar(habilidad.id, habilidad.nombre, habilidad.descripcion, habilidad.nivel)">
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+  </mat-card-actions>
+</mat-card>
