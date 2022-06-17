@@ -1,1 +1,92 @@
-<p>agregar-experiencia works!</p>
+<h1>Experiencia</h1>
+
+<div >
+  <div >
+    <mat-dialog-content>
+      <form [formGroup]="experienciaForm">
+        <div class="form-container">
+          <mat-form-field>
+            <mat-label>Cargo</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="puesto"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Empresa</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="empresa"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Fecha de inicio</mat-label>
+            <input matInput
+                   type="date"
+                   formControlName="fecha_inicio"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Fecha de fin</mat-label>
+            <input matInput
+                   type="date"
+                   formControlName="fecha_fin">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Descripción de las tareas</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="descripcion">
+          </mat-form-field>
+
+          <!--<mat-form-field>
+            <mat-label>Logo empresa (opcional)</mat-label>
+            <input matInput
+                   type="text"
+                   [(ngModel)]="experiencia.logo">
+          </mat-form-field>-->
+
+        </div>
+
+        <div>
+          <mat-label>Imagen</mat-label>
+          <label for="file-upload">
+            Subir archivo
+          </label>
+          <input id="file-upload"
+                 accept="image/png, image/jpeg"
+                 (change)="onFileChanged($event)"
+                 type="file">
+        </div>
+
+      </form>
+    </mat-dialog-content>
+
+
+    <br>
+    <div fxLayout>
+      <button mat-raised-button
+              color="primary"
+              (click)="guardarExperiencia()">
+        <mat-icon>save</mat-icon>
+        {{(data ? 'Actualizar' : 'Guardar')}}
+      </button>
+
+      <span class="espaciador"></span>
+
+      <button *ngIf="data"
+              mat-raised-button
+              color="warn"
+              (click)="borrarExperiencia()">
+        <mat-icon>delete</mat-icon>
+        Borrar
+      </button>
+
+    </div>
+  </div>
+
+</div>

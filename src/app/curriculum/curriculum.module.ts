@@ -25,6 +25,7 @@ import { AgregarFormacionComponent } from './secciones/formacion/agregar-formaci
 import { AgregarCursoComponent } from './secciones/formacion/agregar-curso/agregar-curso.component';
 import { CursoTarjetaComponent } from './secciones/formacion/curso-tarjeta/curso-tarjeta.component';
 import {MaterialModule} from "../material/material.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -55,7 +56,9 @@ import {MaterialModule} from "../material/material.module";
     CommonModule,
     CurriculumRoutingModule,
     FlexLayoutModule,
-    MaterialModule
+    FormsModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class CurriculumModule { }
