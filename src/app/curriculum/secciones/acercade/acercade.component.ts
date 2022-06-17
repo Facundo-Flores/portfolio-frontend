@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Persona, PersonaResponse} from "../../../common/interfaces/curriculum.interface";
+import {CurriculumService} from "../../../common/services/curriculum.service";
 
 @Component({
   selector: 'app-acercade',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercadeComponent implements OnInit {
 
-  constructor() { }
+  infoPersonal: Persona[] = [];
+  constructor(private curriculumService: CurriculumService) { }
 
   ngOnInit(): void {
+    this.getInfoPersonal()
   }
 
+  getInfoPersonal() {
+    this.curriculumService.getAllInfo<PersonaResponse>('persona')
+      .subscribe(resp => {
+        this.infoPersonal = resp.persona
+      })
+  }
 }

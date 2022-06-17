@@ -1,1 +1,9 @@
-<p>acercade works!</p>
+<div fxLayout="row"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+  <div
+    *ngFor="let info of infoPersonal; let i = index">
+    <app-acercade-tarjeta [infoPersonal]="info"></app-acercade-tarjeta>
+  </div>
+</div>

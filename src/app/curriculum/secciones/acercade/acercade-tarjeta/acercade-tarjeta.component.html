@@ -1,1 +1,24 @@
-<p>acercade-tarjeta works!</p>
+<div fxLayout="row wrap">
+
+  <mat-card class="gradiente-encabezado">
+    <div>
+      <div fxFlex>
+        <mat-card-header>
+          <mat-card-title> {{ infoPersonal.nombre }} {{ infoPersonal.apellido}}</mat-card-title>
+          <mat-card-subtitle> {{infoPersonal.titulo }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p><mat-icon>work</mat-icon> {{infoPersonal.trabajo_actual}}</p>
+          <p><mat-icon>location_pin</mat-icon> {{infoPersonal}}</p>
+          <p>{{infoPersonal.perfil}}</p>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="gradiente-encabezado">
+    <img mat-card-lg-image src="./assets/imagenes/Foto-perfil-actual-recortada.jpg" alt="foto-perfil">
+  </mat-card>
+
+</div>
