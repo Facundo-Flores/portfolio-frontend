@@ -1,1 +1,56 @@
-<p>agregar-habilidad works!</p>
+<h1>Habilidad</h1>
+
+<div >
+  <div >
+    <mat-dialog-content>
+      <form [formGroup]="habilidadForm">
+        <div class="form-container">
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="nombre"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Descripción</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="descripcion"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Nivel</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="nivel"
+                   required>
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-dialog-content>
+
+    <br>
+
+    <div fxLayout>
+      <button mat-raised-button
+              color="primary"
+              (click)="guardarHabilidad()">
+        <mat-icon>save</mat-icon>
+        {{data ? 'Actualizar' : 'Guardar'}}
+      </button>
+
+      <span class="espaciador"></span>
+
+      <button *ngIf="data"
+              mat-raised-button
+              color="warn"
+              (click)="borrarHabilidad()">
+        <mat-icon>delete</mat-icon>
+        Borrar
+      </button>
+    </div>
+  </div>
+</div>
