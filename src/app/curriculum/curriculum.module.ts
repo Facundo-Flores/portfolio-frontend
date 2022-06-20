@@ -27,6 +27,7 @@ import { CursoTarjetaComponent } from './secciones/formacion/curso-tarjeta/curso
 import {MaterialModule} from "../material/material.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppModule} from "../app.module";
+import {AuthModule} from "../auth/auth.module";
 
 
 
@@ -54,6 +55,7 @@ import {AppModule} from "../app.module";
     CursoTarjetaComponent,
   ],
   imports: [
+    AuthModule,
     CommonModule,
     CurriculumRoutingModule,
     FlexLayoutModule,

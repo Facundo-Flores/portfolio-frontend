@@ -17,6 +17,7 @@ export class IndiceComponent implements OnInit {
 
   constructor(public dialog: MatDialog,
               private router: Router,
+              public auth: AuthService
               ) { }
 
   ngOnInit(): void {

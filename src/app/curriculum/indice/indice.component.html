@@ -16,49 +16,52 @@
         <mat-icon mat-list-icon>label</mat-icon>
         <span>Curriculum</span>
       </a>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <mat-icon mat-list-icon>add</mat-icon>
-            Agregar
-          </mat-panel-title>
-        </mat-expansion-panel-header>
+      <div *ngIf="auth.isAuthenticated$ | async">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>add</mat-icon>
+              Agregar
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-        <div (click)="sidenav.toggle()">
-          <button mat-list-item
-                  (click)="abrirDialogExperiencia()">
-            <span>Experiencia</span>
-          </button>
-        </div>
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogExperiencia()">
+              <span>Experiencia</span>
+            </button>
+          </div>
 
-        <div (click)="sidenav.toggle()">
-          <button mat-list-item
-                  (click)="abrirDialogFormacion()">
-            <span>Educación</span>
-          </button>
-        </div>
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogFormacion()">
+              <span>Educación</span>
+            </button>
+          </div>
 
-        <div (click)="sidenav.toggle()">
-          <button mat-list-item
-                  (click)="abrirDialogCurso()">
-            <span>Curso</span>
-          </button>
-        </div>
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogCurso()">
+              <span>Curso</span>
+            </button>
+          </div>
 
-        <div (click)="sidenav.toggle()">
-          <button mat-list-item
-                  (click)="abrirDialogHabilidad()">
-            <span>Habilidad</span>
-          </button>
-        </div>
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogHabilidad()">
+              <span>Habilidad</span>
+            </button>
+          </div>
 
-        <div (click)="sidenav.toggle()">
-          <button mat-list-item
-                  (click)="abrirDialogProyecto()">
-            <span>Proyecto</span>
-          </button>
-        </div>
-      </mat-expansion-panel>
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogProyecto()">
+              <span>Proyecto</span>
+            </button>
+          </div>
+        </mat-expansion-panel>
+      </div>
+
     </mat-nav-list>
   </mat-sidenav>
 
@@ -68,6 +71,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="espaciador"></span>
+    <app-authentication></app-authentication>
   </mat-toolbar>
 
   <div class="container">
