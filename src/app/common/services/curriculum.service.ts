@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class CurriculumService {
 
-  private rutaBase: string = 'http://localhost:8080'
+  private rutaBase: string = 'http://localhost:8080/api/v1'
 
   constructor(private http: HttpClient) { }
 
