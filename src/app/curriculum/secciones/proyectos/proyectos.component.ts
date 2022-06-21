@@ -19,6 +19,7 @@ export class ProyectosComponent implements OnInit {
   getProyectos() {
     this.curriculumService.getAllInfo<ProyectoResponse>('proyecto')
       .subscribe(resp => {
+        console.log(resp)
         this.procesarProyectoResponse(resp)
       })
   }

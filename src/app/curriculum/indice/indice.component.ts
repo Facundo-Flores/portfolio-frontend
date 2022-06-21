@@ -21,7 +21,10 @@ export class IndiceComponent implements OnInit {
               ) { }
 
   ngOnInit(): void {
+    console.log(this.auth.isAuthenticated$, this.auth.appState$)
   }
+
+
 
   abrirDialogExperiencia() {
     const dialogRef = this.dialog.open(AgregarExperienciaComponent, {

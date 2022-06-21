@@ -26,7 +26,6 @@ import { AgregarCursoComponent } from './secciones/formacion/agregar-curso/agreg
 import { CursoTarjetaComponent } from './secciones/formacion/curso-tarjeta/curso-tarjeta.component';
 import {MaterialModule} from "../material/material.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AppModule} from "../app.module";
 import {AuthModule} from "../auth/auth.module";
 
 

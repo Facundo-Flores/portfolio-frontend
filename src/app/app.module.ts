@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./material/material.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { ConfirmarComponent } from './common/confirmar/confirmar.component';
-import {AuthModule} from "@auth0/auth0-angular";
+import {AuthHttpInterceptor, AuthModule} from "@auth0/auth0-angular";
 import {environment} from "../environments/environment";
 
 
@@ -30,7 +30,13 @@ import {environment} from "../environments/environment";
       },
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHttpInterceptor,
+      multi: true,
+    }
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })

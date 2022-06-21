@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Experiencia} from "../interfaces/curriculum.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class CurriculumService {
 
   getAllInfo<T>(ruta: string): Observable<T> {
     return this.http.get<T>(`${this.rutaBase}/${ruta}`);
+  }
+
+  getExperiencias(): Observable<Experiencia[]> {
+    return this.http.get<Experiencia[]>(`${this.rutaBase}/experiencia`)
   }
 
   getInfoPorId<T>(id: number, ruta: string): Observable<T> {
