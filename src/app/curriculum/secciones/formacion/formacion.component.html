@@ -1,0 +1,23 @@
+<h1>Educación</h1>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+  <div fxFlex="30"
+       *ngFor="let item of listaFormacion">
+    <app-formacion-tarjeta [educacion]="item"></app-formacion-tarjeta>
+  </div>
+</div>
+
+<h2>Cursos</h2>
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+  <div fxFlex="30"
+       *ngFor="let curso of listaCursos">
+    <app-curso-tarjeta [curso]="curso"></app-curso-tarjeta>
+  </div>
+</div>

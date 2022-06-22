@@ -1,0 +1,81 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar color="primary">
+      <span>Menú</span>
+      <span class="espaciador"></span>
+      <button mat-icon-button
+              (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a routerLink="./curriculum"
+         mat-list-item
+         (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Curriculum</span>
+      </a>
+      <div *ngIf="auth.isAuthenticated$ | async">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon mat-list-icon>add</mat-icon>
+              Agregar
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogExperiencia()">
+              <span>Experiencia</span>
+            </button>
+          </div>
+
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogFormacion()">
+              <span>Educación</span>
+            </button>
+          </div>
+
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogCurso()">
+              <span>Curso</span>
+            </button>
+          </div>
+
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogHabilidad()">
+              <span>Habilidad</span>
+            </button>
+          </div>
+
+          <div (click)="sidenav.toggle()">
+            <button mat-list-item
+                    (click)="abrirDialogProyecto()">
+              <span>Proyecto</span>
+            </button>
+          </div>
+        </mat-expansion-panel>
+      </div>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar>
+    <button mat-icon-button
+            (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="espaciador"></span>
+    <app-authentication></app-authentication>
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

@@ -1,0 +1,78 @@
+<h1>Curso</h1>
+
+<div>
+
+  <div>
+    <mat-dialog-content>
+      <form [formGroup]="cursoForm">
+        <div class="form-container">
+          <mat-form-field>
+            <mat-label>Nombre del curso</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="nombre"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Institución</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="institucion"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Carga horaria</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="carga_horaria"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Año</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="periodo"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-label>Imagen</mat-label>
+          <label for="file-upload">
+            Subir archivo
+          </label>
+          <input id="file-upload"
+                 accept="image/png, image/jpeg"
+                 (change)="onFileChanged($event)"
+                 type="file">
+        </div>
+
+      </form>
+    </mat-dialog-content>
+
+    <br>
+
+    <div fxLayout>
+      <button mat-raised-button
+              color="primary"
+              (click)="guardarCurso()">
+        <mat-icon>save</mat-icon>
+        {{(data) ? 'Actualizar' : 'Guardar'}}
+      </button>
+
+      <span class="espaciador"></span>
+
+      <button *ngIf="data"
+              mat-raised-button
+              color="warn"
+              (click)="borrarCurso()">
+        <mat-icon>delete</mat-icon>
+        Borrar
+      </button>
+    </div>
+  </div>
+</div>
+

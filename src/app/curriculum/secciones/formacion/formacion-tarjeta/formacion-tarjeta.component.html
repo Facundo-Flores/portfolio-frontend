@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <span *ngIf="educacion.logo != null"><img [src]="educacion.logo" width="50" height="50"></span>{{ educacion.titulo }}
+    </mat-card-title>
+    <mat-card-subtitle> {{educacion.institucion }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Desde {{educacion.fecha_inicio | date: 'MM/yyyy'}}</p>
+    <div *ngIf="educacion.fecha_fin">
+      <p>Hasta {{educacion.fecha_fin | date: 'MM/yyyy'}}</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <!--<button mat-button color="info" [routerLink]="['../editar/educacion', educacion.id]">-->
+    <div *ngIf="auth.isAuthenticated$ | async">
+      <button mat-button color="info" (click)="editar(educacion.id, educacion.titulo, educacion.institucion,
+                                                    educacion.fecha_inicio, educacion.fecha_fin, educacion.logo)">
+        <mat-icon>edit</mat-icon>
+        Editar
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

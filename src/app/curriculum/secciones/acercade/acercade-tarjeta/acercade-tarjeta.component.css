@@ -1,0 +1,46 @@
+.banner {
+  border-radius: 8px;
+  /*width: 1300px;*/
+}
+
+.foto-perfil {
+  position: relative;
+  top: 30px;
+}
+
+.superposicion-imagenes {
+  position: relative;
+  display: inline-block;
+  transition: transform 150ms ease-in-out;
+}
+
+.superposicion-imagenes img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.superposicion-imagenes svg {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.gradiente-encabezado {
+  background-image: linear-gradient(to bottom right, #CAE5F6, #EBF6FC);
+  background-size: auto;
+}
+
+.mat-card {
+  margin-top: 20px;
+}
+
+img {
+  width: 300px;
+  height: 250px;
+  border-radius: 8px;
+}

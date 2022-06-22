@@ -1,0 +1,16 @@
+<h1>Proyectos</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+  <mat-tab-group mat-align-tabs="start" animationDuration="1000">
+    <mat-tab
+      *ngFor="let proyecto of listadoProyectos"
+      [label]="proyecto.nombre">
+      <app-proyecto-tarjeta [proyecto]="proyecto"></app-proyecto-tarjeta>
+    </mat-tab>
+  </mat-tab-group>
+</div>

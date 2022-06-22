@@ -1,0 +1,21 @@
+<div id="pestania">
+  <div class="container">
+    <span *ngIf="proyecto.img != null; else sinFondoBlock"><img [src]="proyecto.img" width="1200" height="300" alt="imagen-proyecto"></span>
+    <ng-template #sinFondoBlock><img src="" class="fondo-proyectos" width="1200" height="300"></ng-template>
+    <div class="carousel-caption">
+      <h1>{{ proyecto.nombre }}</h1>
+      <p>{{ proyecto.descripcion }}</p>
+      <p>
+        <a mat-raised-button [href]="proyecto.url">Ver sitio</a>
+      </p>
+      <!--<button mat-button color="info" [routerLink]="['../editar/proyecto', proyecto.id]">-->
+
+      <div *ngIf="auth.isAuthenticated$ | async">
+        <button mat-button color="info" (click)="editar(proyecto.id, proyecto.nombre, proyecto.descripcion, proyecto.url, proyecto.img)">
+        <mat-icon>edit</mat-icon>
+        Editar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

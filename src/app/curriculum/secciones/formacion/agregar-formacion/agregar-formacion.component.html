@@ -1,0 +1,76 @@
+<h1>Educación</h1>
+
+<div >
+
+  <div>
+    <mat-dialog-content>
+      <form [formGroup]="educacionForm">
+        <div class="form-container">
+          <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="titulo"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Institución</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="institucion"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Fecha de inicio</mat-label>
+            <input matInput
+                   type="date"
+                   formControlName="fecha_inicio"
+                   required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Fecha de fin</mat-label>
+            <input matInput
+                   type="date"
+                   formControlName="fecha_fin">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-label>Imagen</mat-label>
+          <label for="file-upload">
+            Subir archivo
+          </label>
+          <input id="file-upload"
+                 accept="image/png, image/jpeg"
+                 (change)="onFileChanged($event)"
+                 type="file">
+        </div>
+
+      </form>
+    </mat-dialog-content>
+
+    <br>
+
+    <div fxLayout>
+      <button mat-raised-button
+              color="primary"
+              (click)="guardarEducacion()">
+        <mat-icon>save</mat-icon>
+        {{(data) ? 'Actualizar' : 'Guardar'}}
+      </button>
+
+      <span class="espaciador"></span>
+
+      <button *ngIf="data"
+              mat-raised-button
+              color="warn"
+              (click)="borrarEducacion()">
+        <mat-icon>delete</mat-icon>
+        Borrar
+      </button>
+    </div>
+  </div>
+</div>

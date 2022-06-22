@@ -1,0 +1,26 @@
+mat-card {
+  margin-top: 20px;
+  background-image: linear-gradient(to bottom right, #97D0ED, #CAE5F6);
+}
+
+.barra-progreso {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+.barra-progreso > span {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #0d6efd;
+  --bs-bg-opacity: 1;
+  background-color: rgb(38, 196, 122) !important;
+}
