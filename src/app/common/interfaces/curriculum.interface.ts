@@ -7,7 +7,7 @@ export interface Metadatum {
 /** Persona **/
 export interface PersonaResponse {
   metadata: Metadatum[];
-  persona:  Persona[];
+  personas:  Persona[];
 }
 
 export interface Persona {
@@ -22,7 +22,7 @@ export interface Persona {
 /**  Experiencia **/
 export interface ExperienciaResponse {
   metadata:    Metadatum[];
-  experiencia: Experiencia[];
+  experiencias: Experiencia[];
 }
 
 export interface Experiencia {
@@ -32,7 +32,7 @@ export interface Experiencia {
   descripcion:   string;
   fecha_inicio:  Date;
   fecha_fin?:    Date;
-  logo?:         any;
+  logo?:         string;
   persona?:      Persona;
 }
 

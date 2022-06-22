@@ -19,7 +19,8 @@ export class AcercadeComponent implements OnInit {
   getInfoPersonal() {
     this.curriculumService.getAllInfo<PersonaResponse>('persona')
       .subscribe(resp => {
-        this.infoPersonal = resp.persona
+        this.infoPersonal = resp.personas
+        console.log(resp)
       })
   }
 }

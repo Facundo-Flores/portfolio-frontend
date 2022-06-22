@@ -17,10 +17,14 @@ export class IndiceComponent implements OnInit {
 
   constructor(public dialog: MatDialog,
               private router: Router,
+              public auth: AuthService
               ) { }
 
   ngOnInit(): void {
+    console.log(this.auth.isAuthenticated$, this.auth.appState$)
   }
+
+
 
   abrirDialogExperiencia() {
     const dialogRef = this.dialog.open(AgregarExperienciaComponent, {

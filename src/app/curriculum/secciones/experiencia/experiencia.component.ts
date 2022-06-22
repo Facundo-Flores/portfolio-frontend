@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Experiencia, ExperienciaResponse} from "../../../common/interfaces/curriculum.interface";
 import {CurriculumService} from "../../../common/services/curriculum.service";
 
@@ -9,7 +9,7 @@ import {CurriculumService} from "../../../common/services/curriculum.service";
 })
 export class ExperienciaComponent implements OnInit {
 
-  listaExperiencias: Experiencia[] = [];
+  listadoExperiencias: Experiencia[] = [];
   constructor(private curriculumService: CurriculumService) { }
 
   ngOnInit(): void {
@@ -19,17 +19,21 @@ export class ExperienciaComponent implements OnInit {
   getExperiencias() {
     this.curriculumService.getAllInfo<ExperienciaResponse>('experiencia')
       .subscribe(resp => {
+        console.log(resp)
         this.procesarExperienciaResponse(resp)
       })
   }
 
   procesarExperienciaResponse(resp: ExperienciaResponse): Experiencia[] {
-    let listaExperiencia = resp.experiencia
-    listaExperiencia.forEach((item: Experiencia) => {
+    let listadoExperiencia = resp.experiencias;
+    listadoExperiencia.forEach((item: Experiencia) => {
       if (item.logo != null)
         item.logo = 'data:image/jpeg;base64,' + item.logo
-      this.listaExperiencias.push(item)
+      this.listadoExperiencias.push(item)
     })
-    return this.listaExperiencias
+    return this.listadoExperiencias
   }
+
+
+
 }
