@@ -2,6 +2,7 @@ import {Component, Input } from '@angular/core';
 import {Habilidad} from "../../../../common/interfaces/curriculum.interface";
 import {MatDialog} from "@angular/material/dialog";
 import {AgregarHabilidadComponent} from "../agregar-habilidad/agregar-habilidad.component";
+import {AuthService} from "@auth0/auth0-angular";
 
 @Component({
   selector: 'app-habilidad-tarjeta',
@@ -11,7 +12,8 @@ import {AgregarHabilidadComponent} from "../agregar-habilidad/agregar-habilidad.
 export class HabilidadTarjetaComponent {
 
   @Input() habilidad!: Habilidad;
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              public auth: AuthService) { }
 
   editar(id: number | undefined, nombre: string, descripcion: string, nivel: string) {
     const dialogRef = this.dialog.open(AgregarHabilidadComponent, {

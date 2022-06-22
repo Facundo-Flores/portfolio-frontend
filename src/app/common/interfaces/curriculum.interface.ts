@@ -7,7 +7,7 @@ export interface Metadatum {
 /** Persona **/
 export interface PersonaResponse {
   metadata: Metadatum[];
-  persona:  Persona[];
+  personas:  Persona[];
 }
 
 export interface Persona {

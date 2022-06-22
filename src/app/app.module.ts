@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./material/material.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import { ConfirmarComponent } from './common/confirmar/confirmar.component';
-import {AuthHttpInterceptor, AuthModule} from "@auth0/auth0-angular";
-import {environment} from "../environments/environment";
+import {ConfirmarComponent} from './common/confirmar/confirmar.component';
+import {AuthHttpInterceptor, AuthModule, HttpMethod} from "@auth0/auth0-angular";
+import {environment as env} from "../environments/environment";
 
 
 @NgModule({
@@ -24,9 +24,21 @@ import {environment} from "../environments/environment";
     HttpClientModule,
     MaterialModule,
     AuthModule.forRoot({
-      ...environment.auth0,
+      ...env.auth0,
       httpInterceptor: {
-        allowedList: [`${environment.api.serverUrl}/api/v1`],
+        allowedList: [
+          {
+            uri: `${env.api.serverUrl}/api/v1/**`,
+            //allowAnonymous: false
+          },
+          /*{
+            uri: `${env.api.serverUrl}/api/v1/!*`,
+            httpMethod: HttpMethod.Get,
+            allowAnonymous: true
+          },*/
+
+        ],
+
       },
     }),
   ],

@@ -10,10 +10,12 @@
       </p>
       <!--<button mat-button color="info" [routerLink]="['../editar/proyecto', proyecto.id]">-->
 
-      <button mat-button color="info" (click)="editar(proyecto.id, proyecto.nombre, proyecto.descripcion, proyecto.url, proyecto.img)">
+      <div *ngIf="auth.isAuthenticated$ | async">
+        <button mat-button color="info" (click)="editar(proyecto.id, proyecto.nombre, proyecto.descripcion, proyecto.url, proyecto.img)">
         <mat-icon>edit</mat-icon>
         Editar
-      </button>
+        </button>
+      </div>
     </div>
   </div>
 </div>

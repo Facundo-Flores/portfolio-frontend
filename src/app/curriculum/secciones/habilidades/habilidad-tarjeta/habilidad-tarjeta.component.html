@@ -13,9 +13,11 @@
   <mat-card-actions>
     <!--<button mat-button color="info" [routerLink]="['../editar/habilidad', habilidad.id]">-->
 
-    <button mat-button color="info" (click)="editar(habilidad.id, habilidad.nombre, habilidad.descripcion, habilidad.nivel)">
-      <mat-icon>edit</mat-icon>
-      Editar
-    </button>
+    <div *ngIf="auth.isAuthenticated$ | async">
+      <button mat-button color="info" (click)="editar(habilidad.id, habilidad.nombre, habilidad.descripcion, habilidad.nivel)">
+        <mat-icon>edit</mat-icon>
+        Editar
+      </button>
+    </div>
   </mat-card-actions>
 </mat-card>
