@@ -4,3 +4,12 @@
 mat-sidenav {
   width: auto;
 }
+
+.foto-usuario {
+  border-radius: 50%;
+}
+
+#mat-custom {
+  background: repeating-linear-gradient(26deg, lightblue, transparent 100px);
+  color: black;
+}

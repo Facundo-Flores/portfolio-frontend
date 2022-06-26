@@ -8,7 +8,7 @@ import {MaterialModule} from "./material/material.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ConfirmarComponent} from './common/confirmar/confirmar.component';
 import {AuthHttpInterceptor, AuthModule, HttpMethod} from "@auth0/auth0-angular";
-import {environment as env} from "../environments/environment";
+import {environment as env} from "../environments/environment.prod";
 
 
 @NgModule({
@@ -28,14 +28,14 @@ import {environment as env} from "../environments/environment";
       httpInterceptor: {
         allowedList: [
           {
-            uri: `${env.api.serverUrl}/api/v1/**`,
-            //allowAnonymous: false
-          },
-          /*{
-            uri: `${env.api.serverUrl}/api/v1/!*`,
+            uri: `${env.api.serverUrl}/api/v1/*`,
             httpMethod: HttpMethod.Get,
             allowAnonymous: true
-          },*/
+          },
+          {
+            uri: `${env.api.serverUrl}/api/v1/*`,
+            //allowAnonymous: false
+          },
 
         ],
 

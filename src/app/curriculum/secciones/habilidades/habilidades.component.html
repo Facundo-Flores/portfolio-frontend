@@ -1,12 +1,37 @@
-<h1>Habilidades</h1>
-<mat-divider></mat-divider>
-<br>
-<div fxLayout="row wrap"
-     fxLayout.xs="column"
-     fxLayoutAlign="center"
-     fxLayoutGap="20px">
-  <div fxFlex="30"
-       *ngFor="let habilidad of listaHabilidades">
-    <app-habilidad-tarjeta [habilidad]="habilidad"></app-habilidad-tarjeta>
-  </div>
+<div *ngIf="isMobile; else notMobile">
+  <mat-accordion fxLayoutGap="20px">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h1 class="no-gap">Habilidades</h1>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <br>
+      <div fxLayout="row wrap"
+           fxLayout.xs="column"
+           fxLayoutAlign="center"
+           fxLayoutGap="20px">
+        <div fxFlex="30"
+             *ngFor="let habilidad of listaHabilidades">
+          <app-habilidad-tarjeta [habilidad]="habilidad"></app-habilidad-tarjeta>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
+
+<ng-template #notMobile>
+  <h1>Habilidades</h1>
+  <mat-divider></mat-divider>
+  <br>
+  <div fxLayout="row wrap"
+       fxLayout.xs="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="20px">
+    <div fxFlex="30"
+         *ngFor="let habilidad of listaHabilidades">
+      <app-habilidad-tarjeta [habilidad]="habilidad"></app-habilidad-tarjeta>
+    </div>
+  </div>
+</ng-template>

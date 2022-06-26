@@ -82,7 +82,7 @@ export class AgregarFormacionComponent {
     dialog.afterClosed().subscribe(
       (result) => {
         if (result) {
-          this.curriculumService.borrarInfo(this.data.id, 'experiencia')
+          this.curriculumService.borrarInfo(this.data.id, 'educacion')
             .subscribe(() => {
               this.dialogRef.close()
               this.router.routeReuseStrategy.shouldReuseRoute = () => false

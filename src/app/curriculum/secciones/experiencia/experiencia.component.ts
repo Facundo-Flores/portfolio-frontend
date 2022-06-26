@@ -10,6 +10,8 @@ import {CurriculumService} from "../../../common/services/curriculum.service";
 export class ExperienciaComponent implements OnInit {
 
   listadoExperiencias: Experiencia[] = [];
+  width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  isMobile = this.width < 481;
   constructor(private curriculumService: CurriculumService) { }
 
   ngOnInit(): void {
@@ -33,6 +35,11 @@ export class ExperienciaComponent implements OnInit {
     })
     return this.listadoExperiencias
   }
+
+
+
+
+
 
 
 
