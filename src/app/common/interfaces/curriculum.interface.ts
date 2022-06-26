@@ -60,9 +60,9 @@ export interface CursoResponse {
 
 export interface Curso {
   id?:            number;
-  nombre:        string;
-  institucion:   string;
-  carga_horaria: string;
+  nombre_curso:   string;
+  institucion:    string;
+  carga_horaria:  string;
   periodo?:       Date;
   logo?:          string;
   persona?:       Persona;

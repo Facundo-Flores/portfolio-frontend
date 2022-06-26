@@ -24,7 +24,7 @@ export class AgregarCursoComponent {
               private dialogRef: MatDialogRef<AgregarCursoComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
               public dialog: MatDialog) {
     this.cursoForm = this.fb.group({
-      nombre: ['', Validators.required],
+      nombre_curso: ['', Validators.required],
       institucion: ['', Validators.required],
       carga_horaria: ['', Validators.required],
       periodo: ['', Validators.required],
@@ -36,7 +36,7 @@ export class AgregarCursoComponent {
 
   guardarCurso() {
     let data = {
-      nombre: this.cursoForm.get('nombre')?.value,
+      nombre_curso: this.cursoForm.get('nombre')?.value,
       institucion: this.cursoForm.get('institucion')?.value,
       carga_horaria: this.cursoForm.get('carga_horaria')?.value,
       periodo: this.cursoForm.get('periodo')?.value,
@@ -44,7 +44,7 @@ export class AgregarCursoComponent {
     }
 
     const dataUpload = new FormData();
-    dataUpload.append('nombre', data.nombre);
+    dataUpload.append('nombre', data.nombre_curso);
     dataUpload.append('institucion', data.institucion);
     dataUpload.append('carga_horaria', data.carga_horaria);
     dataUpload.append('periodo', data.periodo);
@@ -103,7 +103,7 @@ export class AgregarCursoComponent {
 
   editarCursoForm(data: any) {
     this.cursoForm = this.fb.group({
-      nombre: [data.nombre, Validators.required],
+      nombre_curso: [data.nombre_curso, Validators.required],
       institucion: [data.institucion, Validators.required],
       carga_horaria: [data.carga_horaria, Validators.required],
       periodo: [data.periodo, Validators.required],

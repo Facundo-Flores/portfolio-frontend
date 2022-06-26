@@ -10,6 +10,9 @@ import {CurriculumService} from "../../../common/services/curriculum.service";
 export class ProyectosComponent implements OnInit {
 
   listadoProyectos: Proyecto[] = [];
+  width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  isMobile = this.width < 481;
+
   constructor(private curriculumService: CurriculumService) { }
 
   ngOnInit(): void {

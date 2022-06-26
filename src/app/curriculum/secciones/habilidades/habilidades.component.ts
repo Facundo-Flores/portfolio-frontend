@@ -10,6 +10,9 @@ import {CurriculumService} from "../../../common/services/curriculum.service";
 export class HabilidadesComponent implements OnInit {
 
   listaHabilidades: Habilidad[] = [];
+  width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  isMobile = this.width < 481;
+
   constructor(private curriculumService: CurriculumService) { }
 
   ngOnInit(): void {

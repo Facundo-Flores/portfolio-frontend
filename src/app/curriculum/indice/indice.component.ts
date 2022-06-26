@@ -24,6 +24,8 @@ export class IndiceComponent implements OnInit {
     console.log(this.auth.isAuthenticated$, this.auth.appState$)
   }
 
+  // Datos del usuario
+  user$ = this.auth.user$
 
 
   abrirDialogExperiencia() {

@@ -3,13 +3,18 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Experiencia} from "../interfaces/curriculum.interface";
 import {AuthService} from "@auth0/auth0-angular";
+import {environment as prodEnv} from "../../../environments/environment.prod";
+import {environment as devEnv} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurriculumService {
 
-  private rutaBase: string = 'http://localhost:8080/api/v1'
+
+  //private rutaBase: string = prodEnv.api.serverUrl + '/api/v1'
+  private rutaBase: string = devEnv.api.serverUrl + '/api/v1'
+
 
   constructor(private http: HttpClient,
               public authService: AuthService) { }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
+import {MatCarousel, MatCarouselComponent} from "ng-mat-carousel";
 import {AgregarProyectoComponent} from "../agregar-proyecto/agregar-proyecto.component";
 import {Proyecto} from "../../../../common/interfaces/curriculum.interface";
 import {AuthService} from "@auth0/auth0-angular";

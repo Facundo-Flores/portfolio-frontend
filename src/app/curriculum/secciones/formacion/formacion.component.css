@@ -4,3 +4,13 @@ h1 {
 h2 {
   margin-top: 30px;
 }
+
+mat-expansion-panel {
+  margin-top: 50px;
+  background-image: url("src/assets/imagenes/19366.jpg");
+  background-size: cover;
+}
+
+.no-gap {
+  margin-top: 10px;
+}
